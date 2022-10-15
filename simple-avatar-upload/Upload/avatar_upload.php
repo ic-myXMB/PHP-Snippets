@@ -25,7 +25,7 @@ $file_dir = "avatars";
 // echo file infos
 foreach ($_FILES as $file_name => $file_data) {
 
-    // if is image file type then get image width and height
+	// if is image file type then get image width and height
 	list($width, $height) = getimagesize($file_data["tmp_name"]);
 
 	// if so, also display echo image file infos
