@@ -29,7 +29,7 @@
 	         <img src="gen_captcha.php" alt="CAPTCHA">	    
 	     </div>
 	     <form name="form" method="POST" action="">
-	      <?php
+	       <?php
 	         // start session
 	         session_start();
 	         // define captcha current
@@ -41,7 +41,7 @@
 	                 // echo submitted captcha is correct
 	                 echo "<span style=\"color:green;\"><b>Captcha is CORRECT!</b></span><br>";
 	                } else {
-	        	     //echo submitted captcha is wrong
+	                 //echo submitted captcha is wrong
 	                 echo "<span style=\"color:red;\"><b>Captcha is WRONG! Try again.</b></span><br>";
 	                }
 	            } 
