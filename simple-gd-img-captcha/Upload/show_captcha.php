@@ -32,7 +32,7 @@
 	       <?php
 	         // start session
 	         session_start();
-	         // define captcha current
+	         // session captcha current is post captcha current
 	         $_POST['captcha_current'] = $_SESSION['captcha_current'];
 	           // if captcha challenge and captcha current is true
 	           if (isset($_POST['captcha_challenge']) && isset($_POST['captcha_current'])) {
@@ -41,7 +41,7 @@
 	                 // echo submitted captcha is correct
 	                 echo "<span style=\"color:green;\"><b>Captcha is CORRECT!</b></span><br>";
 	                } else {
-	                 //echo submitted captcha is wrong
+	                 // echo submitted captcha is wrong
 	                 echo "<span style=\"color:red;\"><b>Captcha is WRONG! Try again.</b></span><br>";
 	                }
 	            } 

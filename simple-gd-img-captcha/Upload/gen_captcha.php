@@ -11,9 +11,9 @@ session_start();
 // adjust width & height if needed below
 
 // image canvas width
-$captcha_width = 150;
+$captcha_width = 160;
 // image canvas height
-$captcha_height = 25;
+$captcha_height = 35;
 
 // create image create true color
 $captcha_image = imagecreatetruecolor($captcha_width, $captcha_height);
@@ -69,8 +69,10 @@ $captcha_text = substr(str_shuffle(str_repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVW
 // session captcha current
 $_SESSION['captcha_current'] = $captcha_text;
 
+// if canvas width and height is changed also change x & y ie: 28, 8 below to reflect dimension changes
+
 // write the captcha image string 
-imagestring($captcha_image, $font, 16, 2, $captcha_text, $white);
+imagestring($captcha_image, $font, 28, 8, $captcha_text, $white);
 
 // output the captcha image to browser
 header("Content-type: image/png");
