@@ -5,17 +5,17 @@
 <title>Simple PHP Generated Captcha</title>
 <style>
 	.captcha-form {
-		padding: 6px;  
+		 padding: 6px;  
 	}
 	.captcha-body {
-		padding: 6px;
+		 padding: 6px;
 	}	
 	.captcha-image {
-		padding: 6px;
+		 padding: 6px;
 	}
 	.captcha-request-text {
-		color: teal;
-		font-weight: 400;
+		 color: teal;
+		 font-weight: 400;
 	}
 </style>
 </head>
@@ -34,7 +34,7 @@
 	         session_start();
 	         // define captcha current
 	         $_POST['captcha_current'] = $_SESSION['captcha_current'];
-	         // if captcha challenge and captcha current is true
+	           // if captcha challenge and captcha current is true
 	           if (isset($_POST['captcha_challenge']) && isset($_POST['captcha_current'])) {
 	               // if captcha challenge is equal to captcha current
 	               if ($_POST['captcha_challenge'] === $_POST['captcha_current']) { 	
@@ -45,7 +45,7 @@
 	                 echo "<span style=\"color:red;\"><b>Captcha is WRONG! Try again.</b></span><br>";
 	                }
 	            } 
-	         ?> 
+	        ?> 
 	         <input type="text" id="captcha_challenge" name="captcha_challenge">
 	         <input type="submit" value="Submit">
 	      </form>
