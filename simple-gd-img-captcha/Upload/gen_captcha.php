@@ -1,16 +1,22 @@
 <?php
 /*
 * Simple GD img captcha
-* ic-myxmb
+* Author: ic-myxmb
 */
 
 // session start
 session_start();
 
 // create the captcha image canvas
+// adjust width & height if needed below
+
+// image canvas width
+$captcha_width = 150;
+// image canvas height
+$captcha_height = 25;
 
 // create image create true color
-$captcha_image = imagecreatetruecolor(150, 25);
+$captcha_image = imagecreatetruecolor($captcha_width, $captcha_height);
 
 // image anti alias
 imageantialias($captcha_image, true);
