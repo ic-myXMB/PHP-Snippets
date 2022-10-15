@@ -43,11 +43,11 @@ foreach ($_FILES as $file_name => $file_data) {
 	// echo file size
 	echo "file size: ".$file_data["size"]." bytes<br/>\n";
 
-    // echo file extension info
+	// echo file extension info
 	$path = $file_data["name"]; // file data name
 	$ext = pathinfo($path, PATHINFO_EXTENSION); // extension name
 
-    // if such file is an image file type
+	// if such file is an image file type
 	if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
         // if so, also display image dimension infos
 
@@ -89,7 +89,7 @@ foreach ($_FILES as $file_name => $file_data) {
 	    if ($width == $max_width || $height == $max_height) {
 	       // if so, do the upload
 
-           // if is an uploaded file
+	       // if is an uploaded file
 	       if (is_uploaded_file($file_data["tmp_name"])) {
 
 		      // if so, temp explode
@@ -98,10 +98,10 @@ foreach ($_FILES as $file_name => $file_data) {
 		      // if so, do new file name from temp
 		      $new_filename = round(microtime(true)) . '.' . end($temp);
 
-              // if so, move upload file or die
+		      // if so, move upload file or die
 		      move_uploaded_file($file_data["tmp_name"], "$file_dir/".$new_filename) or die ("Could not upload image file!");
 
-	          // if so, is an image file so echo image uploaded success notice
+		      // if so, is an image file so echo image uploaded success notice
 		      echo "The image file was uploaded!<br/>";
 
 		      // new filename is avatar_image as avatar_image is avatar
@@ -110,7 +110,7 @@ foreach ($_FILES as $file_name => $file_data) {
 
 		      // if so, echo display uploaded image file name
 		      // else comment out new filename echo below
-              // echo new filename
+		      // echo new filename
 		      echo "New filename: ".$new_filename."<br />";
 
 		      // display image
