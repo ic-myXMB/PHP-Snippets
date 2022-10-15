@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <title>A simple avatar image file upload form</title>
+ </head>
+ <body>
+     <form action="avatar_upload.php" enctype="multipart/form-data" method="POST">
+         <input type="hidden" name="MAX_FILE_SIZE" value="51200"/>
+         <p><strong>Avatar to Upload:</strong> <input type="file" name="avatar_file_upload"/></p>
+         <p><input type="submit" value="upload!"></p>
+     </form>
+ </body>
+</html>
