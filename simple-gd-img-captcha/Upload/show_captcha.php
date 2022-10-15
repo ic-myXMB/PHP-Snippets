@@ -21,9 +21,9 @@
 	    $safe_captcha_challenge = htmlspecialchars($_POST['captcha_challenge']);
 	    // define captcha test
 	    $_POST['captcha_current'] = $_SESSION['captcha_current'];
-        // if captcha challenge and captcha test is true
+	    // if captcha challenge and captcha test is true
 	    if (isset($safe_captcha_challenge) && isset($_POST['captcha_current'])) {
-            // if captcha challenge is equal to captcha test
+	        // if captcha challenge is equal to captcha test
 	        if ($safe_captcha_challenge === $_POST['captcha_current']) { 	
 	            // echo submitted captcha is correct
 	            echo "<span style=\"color:green;\"><b>Captcha is CORRECT!</b></span><br>";
