@@ -69,10 +69,12 @@ $captcha_text = substr(str_shuffle(str_repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVW
 // session captcha current
 $_SESSION['captcha_current'] = $captcha_text;
 
-// if canvas width and height is changed also change x & y ie: 28, 8 below to reflect dimension changes
+// if canvas width and height is changed also change x & y below ie: 28, 8 below to reflect dimension changes
+$x = 28;
+$y = 8;
 
 // write the captcha image string 
-imagestring($captcha_image, $font, 28, 8, $captcha_text, $white);
+imagestring($captcha_image, $font, $x, $y, $captcha_text, $white);
 
 // output the captcha image to browser
 header("Content-type: image/png");
