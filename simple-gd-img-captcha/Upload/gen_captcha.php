@@ -54,8 +54,6 @@ for ($i = 0; $i < 10; $i++) {
 // define the color used for the captcha image text
 $white = imagecolorallocate($captcha_image, 255, 255, 255);
 
-// $black = imagecolorallocate($captcha_image, 0, 0, 0);
-
 // load the font used for the captcha image text
 $font = imageloadfont("fonts/hootie.gdf");
 
