@@ -15,14 +15,16 @@ $captcha_width = 160;
 // image canvas height
 $captcha_height = 35;
 
-// create image create true color
+// create image create true colour
 $captcha_image = imagecreatetruecolor($captcha_width, $captcha_height);
 
 // image anti alias
 imageantialias($captcha_image, true);
 
-// colors array
-$colors = [];
+// colours array
+$colours = [];
+
+// colours rands
 
 // red
 $red = rand(125, 175);
@@ -35,13 +37,13 @@ $blue = rand(125, 175);
  
 for ($i = 0; $i < 5; $i++) {
 
-  // image color allocate 
-  $colors[] = imagecolorallocate($captcha_image, $red - 20*$i, $green - 20*$i, $blue - 20*$i);
+  // image colour allocate 
+  $colours[] = imagecolorallocate($captcha_image, $red - 20*$i, $green - 20*$i, $blue - 20*$i);
 
 }
 
 // image fill
-imagefill($captcha_image, 0, 0, $colors[0]);
+imagefill($captcha_image, 0, 0, $colours[0]);
 
 // for
 for ($i = 0; $i < 10; $i++) {
@@ -50,14 +52,14 @@ for ($i = 0; $i < 10; $i++) {
   imagesetthickness($captcha_image, rand(2, 10));
   
   // rectangle color
-  $rectangle_color = $colors[rand(1, 4)];
+  $rectangle_colour = $colours[rand(1, 4)];
   
   // image rectangle rands
-  imagerectangle($captcha_image, rand(-10, 190), rand(-10, 10), rand(-10, 190), rand(40, 60), $rectangle_color);
+  imagerectangle($captcha_image, rand(-10, 190), rand(-10, 10), rand(-10, 190), rand(40, 60), $rectangle_colour);
   
 }
 
-// define the color used for the captcha image text
+// define the colour used for the captcha image text
 $white = imagecolorallocate($captcha_image, 255, 255, 255);
 
 // load the font used for the captcha image text
@@ -70,7 +72,9 @@ $captcha_text = substr(str_shuffle(str_repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVW
 $_SESSION['captcha_current'] = $captcha_text;
 
 // if canvas width and height is changed also change x & y below ie: 28, 8 below to reflect dimension changes
+// x
 $x = 28;
+// y
 $y = 8;
 
 // write the captcha image string 
@@ -80,7 +84,7 @@ imagestring($captcha_image, $font, $x, $y, $captcha_text, $white);
 header("Content-type: image/png");
 imagepng($captcha_image);
 
-// then clean up
+// then clean up by destroy
 imagedestroy($captcha_image);
  
 ?>
